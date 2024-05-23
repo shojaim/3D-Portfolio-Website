@@ -11,14 +11,17 @@ const InfoBox = ({ text, link, btnText }) => (
             <img src={arrow} className="w-4 h-4 object-contain" />
         </Link>
     </div>
+
+
+
 )
 
 const renderContent = {
     1: (
         <h1 className="sm:text-xl sm:leading-snug text-center neo-brutalism-blue py-3 px-6 text-white mx-5">
-        Welcome to <span className="font-semibold"> Shojaei's </span> digital realm. ╰(￣ω￣ｏ)
-        <br/>
-        Here creativity meets technology, & innovation thrives.
+          Welcome to <span className="font-semibold">Shojaei's</span> digital realm.✨
+          <br />
+          Here creativity meets technology, & innovation thrives.
         </h1>
     ),
 

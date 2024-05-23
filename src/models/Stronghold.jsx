@@ -176,3 +176,6 @@ const Stronghold = ({ isRotating, setIsRotating, setCurrentStage, ...props }) =>
   }
   
   export default Stronghold;
+
+
+

@@ -8,8 +8,10 @@ import Bird from '../models/Bird';
 // @ts-ignore
 import Ship from '../models/Ship';
 import HomeInfo from '../components/HomeInfo';
+
 import Mipha from '../assets/Mipha.mp3'
 import { soundoff, soundon } from '../assets/icons';
+import HomeWarn from '../components/HomeWarn';
 
 
 const Home = () => {
@@ -64,12 +66,11 @@ const Home = () => {
 
     <section className="w-full h-screen relative">
   
+
     <div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center">
         {currentStage && <HomeInfo currentStage={currentStage} />}
     </div>
-      
-      
-      
+ 
       
       <Canvas 
         className={`w-full h-screen bg-transparent ${isRotating ? 'cursor-grabbing' : 'cursor-grab'}`} 
@@ -100,18 +101,25 @@ const Home = () => {
           </Suspense>
       </Canvas>
 
-      <div className="absolute bottom-2 left-2">
-        <img 
-          src={!isPlayingMusic ? soundoff : soundon}
-          alt="sound"
-          className="w-10 h-10 cursor-pointer object-contain"
-          onClick={() => setIsPlayingMusic(!isPlayingMusic) }
-        
-        />
-
-      </div>
+        <div className="absolute bottom-2 left-2">
+          <img 
+            src={!isPlayingMusic ? soundoff : soundon}
+            alt="sound"
+            className="w-10 h-10 cursor-pointer object-contain"
+            onClick={() => setIsPlayingMusic(!isPlayingMusic) }
+          />
+        </div> 
+      <div>
+          {currentStage && <HomeWarn currentStage={currentStage} />}
+      </div>  
     </section>
+    
   )
+  
 }
 
 export default Home
+
+
+
+
